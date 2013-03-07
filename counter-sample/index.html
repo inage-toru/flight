@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sample</title>
+    </head>
+    <body>
+        <div id="counter">
+            <h1></h1>
+            <button class="increase">++</button>
+            <button class="decrease">--</button>
+        </div>
+        <div id="counter2">
+            <h3></h3>
+            <button class="increase">++</button>
+            <button class="decrease">--</button>
+        </div>
+        <script src="components/jquery/jquery.js"></script>
+        <script src="components/es5-shim/es5-shim.js"></script>
+        <script src="components/es5-shim/es5-sham.js"></script>
+        <script src="components/requirejs/require.js"></script>
+        <script>
+            require(
+                [
+                    'app/component/counter'
+                ],
+                
+                function (Counter) {
+                    'use strict';
+                    Counter.attachTo('#counter');
+                    Counter.attachTo('#counter2', {
+                        count: 10,
+                        labelSelector: 'h3'
+                    });
+                }
+            );
+        </script>
+    </body>
+</html>
