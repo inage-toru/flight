@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Todo</title>
+        <link rel="stylesheet" href="components/bootstrap/css/bootstrap.css">
+        <link rel="stylesheet" href="todo.css">
+    </head>
+    <body class="container">
+        <div class="row">
+            <div class="span6 offset3">
+                <h1>Todos</h1>
+                <header>
+                    <form id="todo-form">
+                        <input type="text" placeholder="What need to be done?">
+                    </form>
+                </header>
+                <ul id="todo-list" class="unstyled"></ul>
+            </div>
+        </div>
+        <script src="components/jquery/jquery.js"></script>
+        <script src="components/es5-shim/es5-shim.js"></script>
+        <script src="components/es5-shim/es5-sham.js"></script>
+        <script data-main="requireMain.js" src="components/requirejs/require.js"></script>
+        <script>
+            require(
+                [
+                    'app/boot/page'
+                ],
+                
+                function (initialize) {
+                    'use strict';
+                    initialize();
+                }
+            );
+        </script>
+    </body>
+</html>
